@@ -73,9 +73,9 @@
 	No objects are output from this script.  This script creates a CSV file.
 .NOTES
 	NAME: Get-BrokerInvalidAccounts.ps1
-	VERSION: 1.00
+	VERSION: 1.10
 	AUTHOR: Carl Webster, Sr. Solutions Architect at Choice Solutions and a lot of code from Michael B. Smith
-	LASTEDIT: May 14, 2019
+	LASTEDIT: June 8, 2019
 #>
 
 [CmdletBinding(SupportsShouldProcess = $False, ConfirmImpact = "None", DefaultParameterSetName = "") ]
@@ -96,6 +96,9 @@ Param(
 #@carlwebster on Twitter
 #http://www.CarlWebster.com
 #Created on May 2, 2019
+#
+#V1.10
+#	Added a line to the final output that shows the number of unique orphaned SIDs or invalid account names found
 #
 #V1.00 
 #	Initial release to the community on 14-May-2019
@@ -1164,6 +1167,9 @@ Write-Verbose "$(Get-Date): There were $InvalidAccounts invalid accounts found"
 Write-Verbose "$(Get-Date): "
 If($InvalidAccounts -gt 0)
 {
+	$UniqueInvalidAccounts = ($InvalidAccountData | Sort-Object Account -Unique).Count
+	Write-Verbose "$(Get-Date): There were $UniqueInvalidAccounts unique orphaned SIDs or invalid account names found"
+	Write-Verbose "$(Get-Date): "
 	Write-Verbose "$(Get-Date): Exporting $InvalidAccounts invalid accounts to $OutputFile"
 	Write-Verbose "$(Get-Date): "
 	$InvalidAccountData = $InvalidAccountData | Sort-Object cmdletName,Account
