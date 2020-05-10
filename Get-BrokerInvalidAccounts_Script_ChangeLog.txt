@@ -4,7 +4,16 @@
 #Created on May 2, 2019
 #
 
-#V1.10
+#V2.00 18-Jun-2019
+#	Add support for -WhatIf and -Confirm
+#	Add switch -RemoveInvalidAccounts
+#	Add switch -UpdateNameCache with a 30 second wait
+#	At the end of the script, show:
+#		Count of unique number of SIDs and account names
+#		Count of accounts removed
+#		Count of accounts not removed
+
+#V1.10 8-Jun-2019
 #	Added a line to the final output that shows the number of unique orphaned SIDs or invalid account names found
 
 #V1.00 
