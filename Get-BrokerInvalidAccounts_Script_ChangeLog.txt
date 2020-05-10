@@ -3,5 +3,9 @@
 #http://www.CarlWebster.com
 #Created on May 2, 2019
 #
+
+#V1.10
+#	Added a line to the final output that shows the number of unique orphaned SIDs or invalid account names found
+
 #V1.00 
 #	Initial release to the community on 14-May-2019
