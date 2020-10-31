@@ -159,7 +159,7 @@
 .NOTES
 	NAME: Get-BrokerInvalidAccounts_V2.ps1
 	VERSION: 2.00
-	AUTHOR: Carl Webster, Sr. Solutions Architect at Choice Solutions and a lot of code from Michael B. Smith
+	AUTHOR: Carl Webster and a lot of code from Michael B. Smith
 	LASTEDIT: June 18, 2019
 #>
 
